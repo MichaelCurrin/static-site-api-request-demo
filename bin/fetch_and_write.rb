@@ -7,13 +7,21 @@
 require 'json'
 require 'faraday'
 
+
 PAY_LOAD = {
   "Foo": "bar",
   "Fuzz": 123
 }
 API_URL = 'http://httpbin.org/post'
 
+PUBLIC_DIR_PATH = '_site'
+OUTPUT_FILENAME = 'api_data.json'
+OUTPUT_PATH = "#{PUBLIC_DIR_PATH}/#{OUTPUT_FILENAME}"
+
+
 def do_post(url, payload)
+  puts "Do POST request"
+
   resp = Faraday.post(
     url,
     payload.to_json,
@@ -26,14 +34,12 @@ def do_post(url, payload)
 end
 
 
-public_dir = '_site'
-Dir.mkdir(public_dir) unless File.exists?(public_dir)
+def write(path, json_data)
+  puts "Write file: #{path}"
+  pretty_json_str = JSON.pretty_generate(json_data)
+  File.open(path, 'w') { |file| file.write(pretty_json_str) }
+end
 
-new_filename = 'api_data.json'
-new_filepath = "#{public_dir}/#{new_filename}"
-
+Dir.mkdir(PUBLIC_DIR_PATH) unless File.exists?(PUBLIC_DIR_PATH)
 json_data = do_post(API_URL, PAY_LOAD)
-
-puts "Write file: #{new_filepath}"
-pretty_json_str = JSON.pretty_generate(json_data)
-File.open(new_filepath, 'w') { |file| file.write(pretty_json_str) }
+write(OUTPUT_PATH, json_data)
