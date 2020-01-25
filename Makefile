@@ -17,15 +17,19 @@ build:
 	bundle exec jekyll build
 
 data:
-	# Using bundle for ruby was recommended for use on Netlify to avoid an error.
-	# Also, ruby will run here in the context of the installed applications, unlike running ruby
-	# directly.
+	# Write using local content.
 	bundle exec ruby bin/write_demo.rb
 
+	# Write using data returned from API.
+	bundle exec ruby bin/fetch_and_write.rb
+
+# Netlify main command.
 build-all: build data
+
 
 # Serve the _site directory. Do not do initial build or build on file changes.
 serve:
 	bundle exec jekyll serve --skip-initial-build --no-watch
 
+# Local main command.
 serve-all: build-all serve
