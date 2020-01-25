@@ -51,3 +51,14 @@ Open in the browser:
 
 
 If you make any changes to the project, you need to stop and start the server.
+
+
+## Development
+
+See the [Makefile](/Makefile) commands:
+
+```sh
+$ make help
+```
+
+Note that for commands that start as `bundle exec ruby`, this was recommended to avoid errors on Netlify when running ruby. Also, when running locally, ruby can only local gems in the vendor directory if this command is used.
