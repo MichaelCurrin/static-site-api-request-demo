@@ -40,6 +40,7 @@ def write(path, json_data)
   File.open(path, 'w') { |file| file.write(pretty_json_str) }
 end
 
+
 Dir.mkdir(PUBLIC_DIR_PATH) unless File.exists?(PUBLIC_DIR_PATH)
 json_data = do_post(API_URL, PAY_LOAD)
 write(OUTPUT_PATH, json_data)
