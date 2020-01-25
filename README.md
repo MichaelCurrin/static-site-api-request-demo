@@ -2,6 +2,9 @@
 > Demo static site which serves data fetched from an API at build time
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/399e649a-072b-4747-9dc2-c9e5cf0e071e/deploy-status)](https://app.netlify.com/sites/static-site-api-request-demo/deploys)
+[![Made with Jekyll](https://img.shields.io/badge/Made%20with-Jekyll-blue.svg)](https://jekyllrb.com)
+[![Made with Ruby](https://img.shields.io/badge/Made%20with-Ruby-blue.svg)](https://www.ruby-lang.org)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MichaelCurrin/static-site-api-request-demo/blob/master/LICENSE)
 
 The API request is done during a remote build or locally. The data is written to a file in the served directory.
 
@@ -10,6 +13,14 @@ This works on Netlify as it allows custom build commands. This will not work on 
 Ruby requests are based on tutorials:
 - https://lostisland.github.io/faraday/usage/
 - http://zetcode.com/web/rubyfaraday/
+
+- [Deploy to Netlify](#deploy-to-netlify)
+- [Install](#install)
+    - [System dependencies](#system-dependencies)
+    - [Project dependencies.](#project-dependencies)
+- [Run](#run)
+- [Development](#development)
+
 
 ## Deploy to Netlify
 
@@ -59,7 +70,7 @@ When you upgrade, the [Gemfile.lock](/Gemfile.lock) file will be updated, if the
 $ make serve-all
 ```
 
-That will command will
+That will command will:
 1. Clear the public `_site` directory (or create it if it does not exist).
 2. Build the Jekyll site.
 3. Fetch API data and store create new data files in the public directory.
