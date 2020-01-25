@@ -1,5 +1,5 @@
 # Demo of writing a file in a directory, creating the directory if needed.
-
+#
 # NB. Run this from the project root.
 
 public_dir = '_site'

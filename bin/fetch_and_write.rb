@@ -3,14 +3,18 @@
 # Do a POST request to a dummy endpoint, handle the response data and write it to a publically
 # served file.
 #
+# As a more advanced feature, an environment variable is sent in the payload, returned by the
+# API and written to the JSON file. This emulates reading an environment variable locally or on
+# Netlify such as when doing an API request using a secret token.
+#
 # NB. This script must be run from the project root.
 require 'json'
 require 'faraday'
 
-
 PAY_LOAD = {
   "Foo": "bar",
-  "Fuzz": 123
+  "Fuzz": 123,
+  "Secret": ENV['TOKEN'],
 }
 API_URL = 'http://httpbin.org/post'
 
