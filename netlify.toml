@@ -1,5 +1,5 @@
 [build]
-  command = "make serve-all"
+  command = "make build-all"
   publish = "_site"
 
 [build.environment]
