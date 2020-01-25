@@ -31,6 +31,14 @@ Ruby requests are based on tutorials:
 1. Wait for the site to build.
 1. View the URL.
 
+If you want to use the a secret token in your build, set the following in the Environment section of your Netlify site.
+
+| Key   | Value     |
+| ----- | --------- |
+| TOKEN | secret123 |
+
+When you view the `api_data.json` file on the website, the Secret value will be set.
+
 ## Install
 
 Setup this project locally - instructions are for Unix-like (_Linux_ or _macOS_) systems.
@@ -83,6 +91,15 @@ Open in the browser:
 
 If you make any changes to the project, you need to stop and start the server.
 
+### Use token
+
+Part of this project includes a demo of using a secret token value, such as one for doing API requests.
+
+Set the token using the command below. When you view the `api_data.json` file, you should see the secret value set with the value.
+
+```sh
+$ TOKEN=secret123 make serve-all
+```
 
 ## Development
 
