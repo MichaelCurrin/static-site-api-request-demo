@@ -22,7 +22,8 @@ data:
 
 build-all: build data
 
+# Serve the _site directory and do nothing else.
 serve:
-	bundle exec jekyll serve --skip-initial-build
+	bundle exec jekyll serve --skip-initial-build --no-watch
 
 serve-all: build-all serve
