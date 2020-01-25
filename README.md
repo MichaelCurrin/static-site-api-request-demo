@@ -13,25 +13,45 @@ Ruby requests are based on tutorials:
 
 ## Deploy to Netlify
 
-Login to [app.netlify.com](https://app.netlify.com)
-
-Create a new site.
-
-Point it at this repo on Github.
-
-Optionally rename the site.
-
-Wait for the site to build.
-
-View the URL.
+1. Login to [app.netlify.com](https://app.netlify.com)
+1. Create a new site.
+1. Point it at this repo on Github.
+1. Optionally rename the site.
+1. Wait for the site to build.
+1. View the URL.
 
 ## Install
 
-Clone the repo.
+Setup this project locally - instructions are for Unix-like (_Linux_ or _macOS_) systems.
 
-```sh
+### System dependencies
+
+Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/#package-management-systems) using a command appropriate for your OS.
+
+Install the [Jekyll](https://jekyllrb.com/) and [Bundler](https://bundler.io/) globally using the command below.
+
+```bash
+$ gem install jekyll bundler
+```
+
+_Jekyll_ is used to build static sites. _Bundler_ is used to manage Ruby gem dependencies in an isolated directory, to preserve your global gems.
+
+### Project dependencies.
+
+Install gems.
+
+```bash
 $ make install
 ```
+
+in future, run this command to upgrade to the latest gems.
+
+```bash
+$ make upgrade
+```
+
+When you upgrade, the [Gemfile.lock](/Gemfile.lock) file will be updated, if there are any changes. You can commit this to your own repo. This file is optional for _Github Pages_ but required if you want to deploy to _Netlify_.
+
 
 ## Run
 
