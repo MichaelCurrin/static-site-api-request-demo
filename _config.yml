@@ -1,0 +1,13 @@
+title: Static Site API Request Demo
+
+baseurl: ""
+url: ""
+
+exclude:
+  - bin/
+  - vendor/
+  - LICENSE
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
