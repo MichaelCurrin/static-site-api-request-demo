@@ -10,3 +10,44 @@ This works on Netlify as it allows custom build commands. This will not work on 
 Ruby requests are based on tutorials:
 - https://lostisland.github.io/faraday/usage/
 - http://zetcode.com/web/rubyfaraday/
+
+## Deploy to Netlify
+
+Login to [app.netlify.com](https://app.netlify.com)
+
+Create a new site.
+
+Point it at this repo on Github.
+
+Optionally rename the site.
+
+Wait for the site to build.
+
+View the URL.
+
+## Install
+
+Clone the repo.
+
+```sh
+$ make install
+```
+
+## Run
+
+```sh
+$ make serve-all
+```
+
+That will command will
+1. Clear the public `_site` directory (or create it if it does not exist).
+2. Build the Jekyll site.
+3. Fetch API data and store create new data files in the public directory.
+4. Start a web serve in the public directory.
+
+
+Open in the browser:
+- http://localhost:4000/
+
+
+If you make any changes to the project, you need to stop and start the server.
