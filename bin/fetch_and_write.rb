@@ -34,6 +34,7 @@ def do_post(url, payload)
   puts "Status: #{resp.status}"
 
   resp_data = JSON.parse resp.body
+  # Return as Hash. The 'data' value is just a string.
   resp_data['json']
 end
 
