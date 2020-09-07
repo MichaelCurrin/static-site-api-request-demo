@@ -11,8 +11,11 @@ The API request is done during a remote build or locally. The data is written to
 This works on Netlify as it allows custom build commands. This will not work on Github Pages though.
 
 Ruby requests are based on tutorials:
+
 - https://lostisland.github.io/faraday/usage/
 - http://zetcode.com/web/rubyfaraday/
+
+**Table of contents**
 
 - [Deploy to Netlify](#deploy-to-netlify)
 - [Install](#install)
@@ -86,6 +89,7 @@ That will command will:
 
 
 Open in the browser:
+
 - http://localhost:4000/
 
 
