@@ -1,20 +1,21 @@
-help:
+default: install
+
+
+h help:
 	@egrep '^\S|^$$' Makefile
 
 
-install:
-	bundle install --path vendor/bundle
 
-upgrade:
-	bundle update
+install:
+	bundle config set --local path vendor/bundle
+	bundle install
 
 
 console:
 	bundle exec irb
 
-
 build:
-	bundle exec jekyll build
+	JEKYLL_ENV=production bundle exec jekyll build --trace
 
 data:
 	# Write using local content.
